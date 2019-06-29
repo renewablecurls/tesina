@@ -2,6 +2,11 @@
 *.pdf_tex
 *.log
 *.out
+*.lot
+*.lof
+*.bbl
+*.blg
+*.toc
 *.gz
 *.xwm
 *.aux

@@ -525,7 +525,7 @@ UdelarExaminerSurname:\the\count1 \endcsname\\\\\\ \ \ \ %
    				\count1=0
    				\nohyphens{\csname UdelarCoAdvisorName:\the\count1 \endcsname\space\csname UdelarCoAdvisorSurname:\the\count1 \endcsname}.\par
    				Tesina de grado - Universidad de la República. Facultad de Ingeniería, Instituto de Estructuras y Transporte, Programa de
-   				grado, Ingeniería Civil, \number\year.\par
+   				grado, \local@graduatename, \number\year.\par
    				Referencias bibliográficas:  \pageref{bib:begin} -- \pageref{bib:end}.\par
    				\count1=0
    				\count2=1
@@ -548,7 +548,7 @@ UdelarExaminerSurname:\the\count1 \endcsname\\\\\\ \ \ \ %
 
 %==== Parte de la página II y III ====
 \newcommand\frontcover@maintext{
-  Tesina presentada para la aprobación de la asignatura Proyecto de Investigación e Innovación en Ingeniería Estructural de la Carrera Ingeniería Civil de la Facultad de Ingeniería de la Universidad de la Rep{\'u}blica.}
+  Tesina presentada como parte de los requisitos para la finalizaci\'on de Carrera  \local@graduatename del de la Universidad de la Rep{\'u}blica.}
 
 
 \newcommand\frontpage@bottomtext{%
