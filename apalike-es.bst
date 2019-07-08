@@ -1,6 +1,8 @@
 % This is the Spanish version of the BibTeX 'apalike' bibliograpy style.
 % Esta es la versión en español del estilo bibliográfico 'apalike' de BibTeX.
 
+% tomado de : https://github.com/eliocamp/tesis/blob/master/apalike-es.bst
+
 % Last revision: 2-oct-13
 % Translated and adapted by Santi Planet.
 %

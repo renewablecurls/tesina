@@ -21,14 +21,15 @@
 %%   Right brace   \}     Tilde         \~}
 %%
 \def\fileversion{v0.1}
-\def\filedate{2016/11/13}
+\def\filedate{2019/07/08}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{tesinapiiie}[\filedate\ \fileversion\ Fing Dissertations and Thesis]
+\ProvidesClass{tesina}[\filedate\ \fileversion\ Class for undergraduate thesis.]
 \LoadClass[12pt,a4paper]{book}
 
-%=========================
-%==== INICIO PAQUETES ====
-%=========================
+
+% =========================
+% ==== INICIO PAQUETES ====
+% =========================
 
 \RequirePackage{color}
 \RequirePackage[perpage]{footmisc}
@@ -97,20 +98,11 @@ top=3.5cm,bottom=3cm,left=4.0cm,right=3.0cm]{geometry} %showframe para ver los m
 \addto\captionsspanish{\renewcommand{\contentsname}{Tabla de contenidos}}
 \addto\captionsspanish{\renewcommand{\bibname}{Referencias bibliográficas}}
 
-% Comandos para control de cambios
-\newcommand{\revision}[1]{{\color{blue}{}#1}} % Para escribir texto nuevo de la revisión.
-\newcommand{\eliminar}[1]{{\color{red}\sout{#1}}} % Para marcar como eliminado el texto actual.
-
 %%==== APACITE ====
 %\renewcommand{\BOthers}[1]{et al.\hbox{}}
 %\renewcommand{\BBAA}{\&}% Letra que va entre los autores en las referencias
 %\renewcommand{\BBAB}{and}% Entre autores en el texto
 %%=================
-
-%==== Comando UdelaRTeX ====
-\def \UdelaRTeX {{\rm U{\hbox{dela}}\rm R\kern-.05em}\kern-.08em T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\spacefactor1000}
-%===========================
-
 
 %==== Tolerancias ====
 \tolerance=10000 % Pueden ser modificadas
@@ -120,6 +112,7 @@ top=3.5cm,bottom=3cm,left=4.0cm,right=3.0cm]{geometry} %showframe para ver los m
 %=============================
 %==== FIN NUEVOS COMANDOS ====
 %=============================
+
 
 %=============================
 %==== INICIO INTERLINEADO ====
@@ -156,6 +149,12 @@ top=3.5cm,bottom=3cm,left=4.0cm,right=3.0cm]{geometry} %showframe para ver los m
 %==========================
 
 
+\DeclareOption{udelar}{%
+	\newcommand{\@university}{UdelaR}
+}
+\DeclareOption{utec}{%
+	\newcommand{\@university}{UTEC}
+}
 
 %==== Opción de Maestría para la clase ===
 \DeclareOption{msc}{%
@@ -359,7 +358,14 @@ top=3.5cm,bottom=3cm,left=4.0cm,right=3.0cm]{geometry} %showframe para ver los m
   \pagenumbering{roman}
   \pagestyle{empty}
   \setcounter{page}{1}
-  \hspace{-0.5cm} \includegraphics[height=0.07\textheight]{imagenes/logo_udelar} \hfill
+  \hspace{-0.5cm}
+  \ifthenelse{\equal{\@university}{UdelaR}}{
+  	\includegraphics[height=0.07\textheight]{imagenes/logo_udelar}
+  }{
+  \ifthenelse{\equal{\@university}{UTEC}}{
+  	\includegraphics[height=0.15\textheight]{imagenes/logo_UTEC}
+}{}}
+  	 \hfill
 			  \includegraphics[height=0.07\textheight]{imagenes/logo_institucion1}  \hspace{5mm}
 			  \includegraphics[height=0.075\textheight]{imagenes/logo_institucion2}
 	  \vspace{1.05cm}
