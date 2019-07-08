@@ -4,4 +4,4 @@ Una clase para edición de tesinas (o tesis de grado) usando LaTeX. Desarrollada
 # _Contributors_
 
 * Pablo Castrillo y Mihdí Caballero: autores de UdelarTeX,
-* [Jimena Machado](https://uy.linkedin.com/in/jimena-machado-3ab307b8) : diseño de ficha catalográfica.
+* [Jimena Machado](https://uy.linkedin.com/in/jimena-machado-3ab307b8) : comentarios sobre ficha catalográfica.
