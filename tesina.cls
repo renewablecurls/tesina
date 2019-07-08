@@ -380,7 +380,8 @@ top=3.5cm,bottom=3cm,left=4.0cm,right=3.0cm]{geometry} %showframe para ver los m
 		  \vspace*{2cm}
 		  \nohyphens{\large{\@authname\ \@authsurn}}\par
 	 \nohyphens{\large{\@authnames\ \@authsurns}}\par
-\nohyphens{\large{\@authnamet\ \@authsurnt}}\par
+	    				\ifthenelse{\not\(\isundefined{\@authnamet}\)}{
+\nohyphens{\large{\@authnamet\ \@authsurnt}}\par}{}
 	  \end{center}
 	  \vspace{\fill}
 	  \begin{center}
@@ -442,7 +443,12 @@ top=3.5cm,bottom=3cm,left=4.0cm,right=3.0cm]{geometry} %showframe para ver los m
 	 \vspace*{1cm}
 	 \nohyphens{\large{\@authname\ \@authsurn}}\par
 	 \nohyphens{\large{\@authnames\ \@authsurns}}\par
+	 %
+	 \ifthenelse{\not\(\isundefined{\@authnamet}\)}{
+	 	%
 	 \nohyphens{\large{\@authnamet\ \@authsurnt}}\par
+ }{}
+%
 \end{center}
 \vspace*{1cm}
 \begin{flushright}
@@ -509,6 +515,8 @@ UdelarExaminerSurname:\the\count1 \endcsname\\\\\\ \ \ \ %
 \frontpage@bottomtext
 }
 
+
+
 \newcommand\makecatalog{%
   
    \begin{center}
@@ -518,7 +526,9 @@ UdelarExaminerSurname:\the\count1 \endcsname\\\\\\ \ \ \ %
    			\setlength{\parindent}{5mm}
    			\noindent\sloppy\nohyphens\@authsurn,
    			\nohyphens\@authname\par
-   			\nohyphens{\local@title\ / \@authname\ \@authsurn,  \@authnames\ \@authsurns, \@authnamet\ \@authsurnt.\ -\ \local@cityname:
+   			\nohyphens{\local@title\ / \@authname\ \@authsurn,  \@authnames\ \@authsurns%
+   				\ifthenelse{\not\(\isundefined{\@authnamet}\)}{
+   					 , \@authnamet\ \@authsurnt}.\ -\ \local@cityname:
    				Universidad de la República, Facultad de Ingeniería, \number\year.}\par
    				{\footnotesize \pageref{front:pageno}},
    				\pageref{LastPage}
@@ -544,9 +554,12 @@ UdelarExaminerSurname:\the\count1 \endcsname\\\\\\ \ \ \ %
    						\advance\count1 by 1
    						\advance\count2 by 1}} 
    				I.~	\nohyphens\@authsurns, \nohyphens\@authnames.
+   				\ifthenelse{\not\(\isundefined{\@authnamet}\)}{   				
    				II.~\nohyphens\@authsurnt, \nohyphens\@authnamet.
    				III.~Universidad de la República, Facultad de Ingeniería, Instituto de
    				Estructuras y Transporte.
+   			}{II.~Universidad de la República, Facultad de Ingeniería, Instituto de
+   			Estructuras y Transporte.}
    		\end{minipage}}
    	\end{center}
 \vspace*{\fill}}
