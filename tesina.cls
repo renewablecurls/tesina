@@ -542,7 +542,7 @@ UdelarExaminerSurname:\the\count1 \endcsname\\\\\\ \ \ \ %
    				\nohyphens{\csname UdelarCoAdvisorName:\the\count1 \endcsname\space\csname UdelarCoAdvisorSurname:\the\count1 \endcsname}.\par
    				Tesina de grado - Universidad de la República. Facultad de Ingeniería, Instituto de Estructuras y Transporte, Programa de
    				grado, \local@graduatename, \number\year.\par
-   				Referencias bibliográficas:  \pageref{bib:begin} -- \pageref{bib:end}.\par
+   				Referencias bibliográficas: p. \pageref{bib:begin} -- \pageref{bib:end}.\par
    				\count1=0
    				\count2=1
    				\nohyphens{\@whilenum \count1<\value{keywords} \do {%
